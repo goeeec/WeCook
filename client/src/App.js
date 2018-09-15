@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import HomePage from './components/HomePage';
+import ResultPage from './components/ResultPage';
 
 class App extends Component {
   constructor(props) {
@@ -32,13 +35,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Cook</h1>
-        </header>
-        <p>
-          Testing backend connectivity: {this.state.data}
-        </p>
+      <div className="Home">
+        <h1>COOK</h1>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/result" component={ResultPage} />
+        </Switch>
       </div>
     );
   }

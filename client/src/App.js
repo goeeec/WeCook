@@ -8,12 +8,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '22'
+      data: []
     };
   }
 
   componentDidMount() {
-    console.log('inside componentDidMount');
+    console.log("inside componentDidMount");
     this.callApi()
       .then(res => this.setState({ data: res.express }))
       .catch(err => console.log(err));
@@ -21,14 +21,19 @@ class App extends Component {
   }
 
   callApi = async () => {
-    console.log('inside callApi');
-    const response = await fetch('/api/test');
+    console.log("inside callApi");
+    const response = await fetch("/api/test", {
+            method: 'POST',
+            body: JSON.stringify({food: "Fish"}),
+            credentials: 'include',
+            headers: {'Content-Type' : 'application/json'}
+        });
     const body = await response.json();
-    
+
     if (response.status !== 200) {
       throw Error(body.message);
     }
-    console.log('cp2');
+    console.log("cp2");
     console.log(body);
     return body;
   };
@@ -42,6 +47,7 @@ class App extends Component {
           <Route path="/result" component={ResultPage} />
         </Switch>
       </div>
+      
     );
   }
 }

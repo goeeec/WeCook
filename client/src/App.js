@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '22'
+      data: []
     };
   }
 
@@ -39,6 +39,11 @@ class App extends Component {
         <p>
           Testing backend connectivity: {this.state.data}
         </p>
+        <ul>
+          {this.state.data.map((meal, key) => (<li key={key}>{meal}</li>))}
+        </ul>
+        {/* <img src={this.state.data} /> */}
+
       </div>
     );
   }

@@ -1,0 +1,37 @@
+.background h1{
+    text-align: center;
+    margin: 5px auto;
+    padding: 4em 0; 
+    font-size:250%;
+    color: black;
+}
+
+.SearchBox{
+    text-align:center;
+    font-size:150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background{
+    background-image: url(./assets/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+html,body{
+    height: 100% !important;
+}
+
+#food_input{
+    width: 120%;
+}
+
+.material-icons{
+    color: hsl(141, 71%, 48%);
+}

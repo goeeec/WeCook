@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('inside componentDidMount');
+    console.log("inside componentDidMount");
     this.callApi()
       .then(res => this.setState({ data: res.express }))
       .catch(err => console.log(err));
@@ -18,14 +18,19 @@ class App extends Component {
   }
 
   callApi = async () => {
-    console.log('inside callApi');
-    const response = await fetch('/api/test');
+    console.log("inside callApi");
+    const response = await fetch("/api/test", {
+            method: 'POST',
+            body: JSON.stringify({food: "Fish"}),
+            credentials: 'include',
+            headers: {'Content-Type' : 'application/json'}
+        });
     const body = await response.json();
-    
+
     if (response.status !== 200) {
       throw Error(body.message);
     }
-    console.log('cp2');
+    console.log("cp2");
     console.log(body);
     return body;
   };
@@ -36,14 +41,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Cook</h1>
         </header>
-        <p>
-          Testing backend connectivity: {this.state.data}
-        </p>
+        <p>Testing backend connectivity: {this.state.data}</p>
         <ul>
-          {this.state.data.map((meal, key) => (<li key={key}>{meal}</li>))}
+          {this.state.data.map((meal, key) => (
+            <li key={key}>{meal}</li>
+          ))}
         </ul>
         {/* <img src={this.state.data} /> */}
-
       </div>
     );
   }

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import NavigationBar from './NavigationBar';
 //import { Link } from 'react-router-dom';
 
 class ResultPage extends Component {
   render() {
     return (
       <div>
-        ResultPage
+        <NavigationBar />
+        <div className="results">
+          ResultPage
+        </div>
       </div>
     );
   }

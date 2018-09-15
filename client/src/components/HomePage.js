@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
@@ -34,3 +35,22 @@ const HomePageHeading= ({ mobile }) => (
 HomepageHeading.propTypes = {
   mobile: PropTypes.bool,
 }
+=======
+import React, { Component } from 'react';
+import { Input } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
+class HomePage extends Component {
+  render() {
+    return (
+      <div>
+        <Link to="/result">
+          <Input action='search' placeholder='Search...' />
+        </Link>
+      </div>
+    );
+  }
+}
+
+export default HomePage;
+>>>>>>> 7afe12283bebe90978b43df6a8e1881e8e7af26f

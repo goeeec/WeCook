@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 
 class ResultPage extends Component {
   render() {
-    return (
-      <div>
-        ResultPage
-      </div>
-    );
+    return <ul>
+        {/* {this.props.route.name.map((meal, key) => <li key={key}>{meal}</li>)} */}
+
+      </ul>;
   }
 }
 

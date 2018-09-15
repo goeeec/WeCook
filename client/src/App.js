@@ -24,7 +24,7 @@ class App extends Component {
     console.log("inside callApi");
     const response = await fetch("/api/test", {
             method: 'POST',
-            body: JSON.stringify({food: "Fish"}),
+            body: JSON.stringify({food: "Beef"}),
             credentials: 'include',
             headers: {'Content-Type' : 'application/json'}
         });
@@ -39,15 +39,45 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="Home">
-        <Switch>
+    return <div className="Home">
+        {/* <h1>COOK</h1> */}
+        <div className="navbar-fixed">
+          <nav>
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo center">
+                WeCook
+              </a>
+              <ul class="right hide-on-med-and-down">
+                
+              </ul>
+            </div>
+          </nav>
+        </div>
+        {/* <p>{this.state.data.name}</p> */}
+        <div class="row">
+          {this.state.data.map((meal, key) => (
+            <div class="col s12 m4 l3 cardsDisplay">
+              <div class="card hoverable">
+                <div class="card-image">
+                  <img src={meal.image} />
+                  <span class="card-title">{meal.name}</span>
+                </div>
+                <div class="card-content">
+                  <p>{meal.category}</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/result" component={ResultPage} />
-        </Switch>
-      </div>
-      
-    );
+        </Switch> */}
+      </div>;
   }
 }
 

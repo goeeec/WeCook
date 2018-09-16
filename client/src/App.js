@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return <div className="Home">
         {/* <h1>COOK</h1> */}
-        <div className="navbar-fixed">
+        {/* <div className="navbar-fixed">
           <nav>
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo center">
@@ -53,7 +53,7 @@ class App extends Component {
             </div>
           </nav>
         </div>
-        {/* <p>{this.state.data.name}</p> */}
+
         <div class="row">
           {this.state.data.map((meal, key) => (
             <div class="col s12 m4 l3 cardsDisplay">
@@ -71,12 +71,12 @@ class App extends Component {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        {/* <Switch>
+        <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/result" component={ResultPage} />
-        </Switch> */}
+        </Switch>
       </div>;
   }
 }

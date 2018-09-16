@@ -1,0 +1,31 @@
+nav {
+  width: 100vw;
+  height: 3em;
+  background-color: grey;
+  line-height: 3em;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2em;
+  color: white;
+}
+
+.SearchArea {
+  display: inline-block;
+  width: 30vw;
+  text-align: right;
+  font-size: 1em;
+  height: 3em !important;
+  border: none !important;
+  padding: 0 0 0 0 !important;
+  margin: 0 0 0 0 !important;
+}
+
+.SearchArea button {
+  padding: none;
+}
+
+.nav-items {
+  height: 3em;
+}

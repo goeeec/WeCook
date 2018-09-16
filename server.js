@@ -30,7 +30,13 @@ app.post("/api/test", (req, res) => {
     //to get the .gif's URL from the Giphy response body:
     const meals = [];
     body.meals.forEach(data => {
-      meals.push(data.strMeal);
+      meals.push({
+        name: data.strMeal,
+        category: data.strCategory,
+        area: data.strArea,
+        instructions: data.strInstructions,
+        image: data.strMealThumb,
+      });
     });
 
     // const imgUrl = body.data.image_url;

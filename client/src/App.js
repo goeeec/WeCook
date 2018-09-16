@@ -46,14 +46,6 @@ class App extends Component {
     this.setState({
       target: newTarget
     }, this.callApi);
-    // this.callApi()
-    //   .then(res => {
-    //     this.setState({ results: res.express });
-    //     console.log(res.express);
-    //     console.log(this.state.results);
-    //   })
-    //   .then(() => {this.props.history.push('/result')})
-    //   .catch(err => console.log(err));
   };
 
   renderResultPage = () => {
@@ -63,15 +55,12 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="Home">
-        <h1>WeCook</h1>
+    return <div className="Home">
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
         </Switch>
-      </div>
-    );
+      </div>;
   }
 }
 

@@ -6,7 +6,7 @@ Project for Hophacks18
 <p>Hophacks is a hackathon where host on John Hopkins University in 2018. The purpose of this project is helping people to get knowledge of recipes and preparing to self cooking. The main initial idea is using names of sauce/spices/other ingredients, search for food pictures (which should be appealing to users). List out the recipes if the users want to, and add the lacking ingredients into a checklist for users to buy.</p>
 </p>
 
-<h5>audience:</h5>
+<h5>Audience:</h5>
 <p>People who are looking to discover new food recipes</p>
 
 <h5>Feature:<h5>

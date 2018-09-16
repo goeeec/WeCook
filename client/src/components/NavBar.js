@@ -13,8 +13,7 @@ class NavBar extends Component {
       <div className="navbar-fixed">
         <nav>
           <div class="nav-wrapper" >
-            <a href="/" class="brand-logo center" Style="display:flex;
-    align-items:center;">
+            <a href="/" class="brand-logo center" Style="display:flex;align-items:center;">
             <img type="image/png" src="../../img/logo3.png" height="28" width="28" Style="margin-right: 5px"/>
               WeCook
             </a>

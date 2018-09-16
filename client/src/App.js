@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './components/HomePage';
 import ResultPage from './components/ResultPage';
 import NavBar from './components/NavBar';
+import InfoPage from './components/InfoPage';
 
 class App extends Component {
   constructor(props) {
@@ -83,6 +84,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
+          <Route path="/result/:meal" component={() => <InfoPage />} />
         </Switch>
       </div>;
   }

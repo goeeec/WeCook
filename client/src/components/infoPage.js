@@ -1,7 +1,16 @@
-import React, { Component } from React;
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "../style/HomePage.css";
 
-class infoPage extends component{
-    
+class InfoPage extends Component{
+    render() {
+        return (
+            <div>
+                <h1>joe</h1>
+                <h1>{this.props.meal}</h1>
+            </div>
+        )
+    }
 }
+
+export default InfoPage;

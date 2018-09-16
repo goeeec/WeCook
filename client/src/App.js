@@ -3,7 +3,8 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import ResultPage from './components/ResultPage';
-import ErrorPage from './components/ErrorPage';
+import NavBar from './components/NavBar';
+import InfoPage from './components/InfoPage';
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class App extends Component {
           } else {
             console.log("in else response " + response);
             // this.setState({ errMsg: "err" });
-            throw "Item not found!";
+            throw Error("Item not found!");
           }
         })
         .then((response) => {
@@ -74,7 +75,7 @@ class App extends Component {
 
   renderResultPage = () => {
     return(
-      <ResultPage results={this.state.results} />
+      <ResultPage results={this.state.results} updateTarget={this.handleSearch} />
     );
   }
 
@@ -83,7 +84,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
-          <Route path="/error" render={() => <ErrorPage msg={this.state.errMsg} />} />
+          <Route path="/result/:meal" component={() => <InfoPage />} />
         </Switch>
       </div>;
   }

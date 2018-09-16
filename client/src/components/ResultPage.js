@@ -6,9 +6,9 @@ class Result extends Component {
   render() {
     return (
       <div className="col s12 m4 l3 cardsDisplay">
-        <div className="card hoverable">
+        <div className="card">
           <div className="card-image">
-            <img src={this.props.meal.image} />
+            <img src={this.props.meal.image} alt={this.props.meal.name} />
             <span className="card-title">{this.props.meal.name}</span>
           </div>
           <div className="card-content">
@@ -18,6 +18,7 @@ class Result extends Component {
             <a href="#">This is a link</a>
           </div>
         </div>
+        
       </div>
     );
   }

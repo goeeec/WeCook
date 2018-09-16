@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-// import { Input } from 'semantic-ui-react';
+//import { Input } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import "../style/HomePage.css";
 
 class HomePage extends Component {
+  searchHandler = () => {
+    let newTarget = document.getElementById('food_input').value;
+    this.props.updateTarget({ food: newTarget });
+    console.log('finished calling props function with: ' + newTarget);
+  }
+
   render() {
     return (
       <div className="background">
@@ -17,7 +23,7 @@ class HomePage extends Component {
 
             <div className="col">
               <Link to="/result">    
-                <i class="material-icons right">send</i>
+                <i onClick={this.searchHandler} class="material-icons right">send</i>
               </Link>
             </div>
 

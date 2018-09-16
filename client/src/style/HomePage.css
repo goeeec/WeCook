@@ -29,10 +29,18 @@ html,body{
 #food_input{
     width: 100%;
     font-size:100%;
-    color: rgb(253, 252, 252);
+    color: #ffffff;
 }
 
 .material-icons{
     color: rgb(253, 252, 252);
     font-size:150%;
+}
+
+i.right:hover{
+    background-color: #ffffff;
+    color: #26a69a;
+    border-radius: 15%;
+    opacity: 1;
+    transition: background-color .4s ease-in-out, border-color .4s ease-in-out,color .4s ease-in-out
 }

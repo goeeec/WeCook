@@ -16,8 +16,8 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 // app.use(express.bodyParser());
 
 app.post("/api/test", (req, res) => {
-    console.log(req.body.food)
-    let food = req.body.food;
+  console.log(req.body.food);
+  let food = req.body.food;
   const url = "http://www.themealdb.com/api/json/v1/1/search.php?s=" + food;
   // const url = "http://api.giphy.com/v1/gifs/random?api_key=nmyDoNuU7ZFmjpQCMgUY90iJvBsoPehA";
   request.get(url, (err, response, body) => {
@@ -36,5 +36,6 @@ app.post("/api/test", (req, res) => {
     // const imgUrl = body.data.image_url;
     // res.setHeader('Content-Type', 'applicaiton/json')
     res.json({ express: meals });
+    console.log(meals);
   });
 });

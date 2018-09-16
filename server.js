@@ -42,6 +42,6 @@ app.post("/api/test", (req, res) => {
     // const imgUrl = body.data.image_url;
     // res.setHeader('Content-Type', 'applicaiton/json')
     res.json({ express: meals });
-    console.log(meals);
+    //console.log(meals);
   });
 });

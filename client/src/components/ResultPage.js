@@ -6,10 +6,11 @@ class Result extends Component {
   render() {
     return (
       <div class="col s12 m4 l3 cardsDisplay">
-        <div class="card hoverable">
+        <div class="card">
           <div class="card-image">
-            <img src={this.props.meal.image} />
+            <img src={this.props.meal.image} alt={this.props.meal.name} />
             <span class="card-title">{this.props.meal.name}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">more_horiz</i></a>
           </div>
           <div class="card-content">
             <p>{this.props.meal.category}</p>

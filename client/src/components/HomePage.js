@@ -13,7 +13,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="background">
-        <div class="container">
+        <div className="container">
           <h1>WeCook</h1>
 
           <div className="SearchBox row">
@@ -23,7 +23,7 @@ class HomePage extends Component {
 
             <div className="col">
               <Link to="/result">    
-                <i onClick={this.searchHandler} class="material-icons right">send</i>
+                <i onClick={this.searchHandler} className="material-icons right">send</i>
               </Link>
             </div>
 

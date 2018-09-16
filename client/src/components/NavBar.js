@@ -5,11 +5,11 @@ class NavBar extends Component {
     return (
       <div className="navbar-fixed">
         <nav>
-          <div class="nav-wrapper">
-            <a href="/" class="brand-logo center">
+          <div className="nav-wrapper">
+            <a href="/" className="brand-logo center">
               WeCook
             </a>
-            <ul class="right hide-on-med-and-down">
+            <ul className="right hide-on-med-and-down">
 
             </ul>
           </div>

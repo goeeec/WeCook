@@ -12,10 +12,10 @@ class Result extends Component {
             <span class="card-title">{this.props.meal.name}</span>
             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">more_horiz</i></a>
           </div>
-          <div class="card-content">
+          <div className="card-content">
             <p>{this.props.meal.category}</p>
           </div>
-          <div class="card-action">
+          <div className="card-action">
             <a href="#">This is a link</a>
           </div>
         </div>
@@ -29,7 +29,7 @@ class ResultPage extends Component {
     return (
       <div>
         <NavBar />
-        <div class="row">
+        <div className="row">
           {this.props.results.map((meal, key) => {
             return (
               <Result meal={meal} index={key} key={key} />

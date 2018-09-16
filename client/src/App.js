@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import ResultPage from './components/ResultPage';
+import NavBar from './components/NavBar';
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
+          <Route path="/navbar" render={() => <NavBar updateTarget2={this.handleSearch} />} />
         </Switch>
       </div>;
   }

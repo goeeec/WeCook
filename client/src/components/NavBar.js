@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
+  searchHandler = () => {
+    let newTarget = document.getElementById('food_input').value;
+    this.props.updateTarget({ food: newTarget });
+    console.log('finished calling props function with: ' + newTarget);
+  }
+
   render() {
     return (
       <div className="navbar-fixed">

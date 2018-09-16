@@ -28,7 +28,7 @@ class ResultPage extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar updateTarget={this.props.updateTarget} />
         <div className="row">
           {this.props.results.map((meal, key) => {
             return (

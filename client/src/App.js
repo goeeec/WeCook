@@ -42,7 +42,7 @@ class App extends Component {
           } else {
             console.log("in else response " + response);
             // this.setState({ errMsg: "err" });
-            throw "Item not found!";
+            throw Error("Item not found!");
           }
         })
         .then((response) => {
@@ -74,7 +74,7 @@ class App extends Component {
 
   renderResultPage = () => {
     return(
-      <ResultPage results={this.state.results} />
+      <ResultPage results={this.state.results} updateTarget={this.handleSearch} />
     );
   }
 
@@ -83,7 +83,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
-          <Route path="/navbar" render={() => <NavBar updateTarget2={this.handleSearch} />} />
         </Switch>
       </div>;
   }

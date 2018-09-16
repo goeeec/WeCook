@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { Input } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import "../style/HomePage.css";
 

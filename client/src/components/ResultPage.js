@@ -5,16 +5,16 @@ import NavBar from './NavBar';
 class Result extends Component {
   render() {
     return (
-      <div class="col s12 m4 l3 cardsDisplay">
-        <div class="card hoverable">
-          <div class="card-image">
+      <div className="col s12 m4 l3 cardsDisplay">
+        <div className="card hoverable">
+          <div className="card-image">
             <img src={this.props.meal.image} />
-            <span class="card-title">{this.props.meal.name}</span>
+            <span className="card-title">{this.props.meal.name}</span>
           </div>
-          <div class="card-content">
+          <div className="card-content">
             <p>{this.props.meal.category}</p>
           </div>
-          <div class="card-action">
+          <div className="card-action">
             <a href="#">This is a link</a>
           </div>
         </div>
@@ -28,7 +28,7 @@ class ResultPage extends Component {
     return (
       <div>
         <NavBar />
-        <div class="row">
+        <div className="row">
           {this.props.results.map((meal, key) => {
             return (
               <Result meal={meal} index={key} key={key} />

@@ -3,13 +3,15 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import ResultPage from './components/ResultPage';
+import ErrorPage from './components/ErrorPage';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       target: { food: '' },
-      results: []
+      results: [],
+      errMsg: ''
     };
   }
 
@@ -26,21 +28,43 @@ class App extends Component {
 
   callApi = async () => {
     console.log("inside callApi");
-    const response = await fetch("/api/test", {
+    // const response = 
+    // await 
+    await fetch("/api/test", {
             method: 'POST',
             body: JSON.stringify(this.state.target),
             credentials: 'include',
             headers: {'Content-Type' : 'application/json'}
-        });
-    const body = await response.json();
+        })
+        .then((response) => {
+          if(response){
+            return response.json();
+          } else {
+            console.log("in else response " + response);
+            // this.setState({ errMsg: "err" });
+            throw "Item not found!";
+          }
+        })
+        .then((response) => {
+            console.log("in if response " + response)
+            this.setState({ results: response.express });
+        })
+        .catch((err) =>{
+          console.log(err)
+          this.setState({ errMsg: err});
+          this.props.history.push('/error');
+        })
 
-    if (response.status !== 200) {
-      throw Error(body.message);
-    }
-    this.setState({
-      results: body.express
-    });
-  };
+      }
+    // const body = await response.json();
+
+  //   if (response.status !== 200) {
+  //     throw Error(body.message);
+  //   }
+  //   this.setState({
+  //     results: body.express
+  //   });
+  // };
 
   handleSearch = (newTarget) => {
     this.setState({
@@ -59,6 +83,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <HomePage updateTarget={this.handleSearch} />} />
           <Route path="/result" render={this.renderResultPage} />
+          <Route path="/error" render={() => <ErrorPage msg={this.state.errMsg} />} />
         </Switch>
       </div>;
   }

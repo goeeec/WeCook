@@ -3,11 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import ResultPage from './components/ResultPage';
-<<<<<<< HEAD
-import ErrorPage from './components/ErrorPage';
-=======
 import NavBar from './components/NavBar';
->>>>>>> origin/Silvia
 
 class App extends Component {
   constructor(props) {

@@ -40,5 +40,6 @@ app.post("/api/test", (req, res) => {
     });
 
     res.json({ express: meals });
+    //console.log(meals);
   });
 });

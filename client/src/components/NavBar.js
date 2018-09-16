@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
   render() {
@@ -9,9 +10,18 @@ class NavBar extends Component {
             <a href="/" className="brand-logo center">
               WeCook
             </a>
-            <ul className="right hide-on-med-and-down">
-
-            </ul>
+            <ul class="right hide-on-med-and-down">
+              <div className="SearchBox row">
+                  <div className="col">
+                  <input id="food_input" type="text" placeholder="Search..." />
+                  </div>
+              </div>
+          </ul>
+            <div className="col">
+                 <Link to="/result">    
+                    <i onClick={this.searchHandler} class="material-icons right">send</i>
+                </Link>
+            </div>
           </div>
         </nav>
       </div>
